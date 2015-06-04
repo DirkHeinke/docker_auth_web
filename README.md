@@ -4,7 +4,7 @@ Webinterface to easily change the [docker_auth](https://github.com/cesanta/docke
 
 Run with
 
-    docker run -it -p 5002:3000 --rm -v /path/to/docker_auth/config/:/config -e CONF_FILE=/config/simple.yml darkdirk/docker_auth_web
+    docker run -it -p 5002:3000 --rm -v /path/to/docker_auth/config/:/config -e CONF_FILE=/config/simple.yml darkdirk/docker-auth-web
    
 You can now access the UI at http://localhost:5002
 
