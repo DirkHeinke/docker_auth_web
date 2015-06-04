@@ -1,0 +1,50 @@
+html
+    head
+        title docker_auth GUI
+    body
+        h1 docker_auth GUI
+        h2 Users
+        table
+            thead
+                tr
+                    th User
+                    th Password (htpasswd -B -n USERNAME)
+                    th
+            tbody(id='usersTable')
+                each key, user in data.users
+                    tr
+                        td
+                            span(class='username')= user
+                        td
+                            input(class='password', size=60, value=key.password)
+                        td
+                            button(class='delete') X
+        button(id='addUser') ADD
+
+        h2 ACL
+        table
+            thead
+                tr
+                    th User
+                    th Name
+                    th Action
+            tbody(id='aclTable')
+                each acl in data.acl
+                    tr
+                        td
+                            input(class='username', value=acl.match.account)
+                        td
+                            input(class='name', value=acl.match.name)
+                        td
+                            select(class='action')
+                                option(value='', selected=(acl.actions == ''))
+                                option(value='pull', selected=(acl.actions == "pull")) pull
+                                option(value='*', selected=(acl.actions == "*")) *
+                        td
+                            button(class='delete') X
+        button(id='addAcl') ADD
+    br
+    br
+    button(id='submit') SUBMIT
+        script(src='http://code.jquery.com/jquery-2.1.4.min.js')
+        script(src='/static/main.js')

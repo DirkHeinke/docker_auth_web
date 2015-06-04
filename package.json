@@ -1,0 +1,17 @@
+{
+  "name": "docker_auth_web",
+  "version": "0.1.0",
+  "description": "WebUI for docker_auth",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dirk Heinke",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.12.4",
+    "express": "^4.12.4",
+    "jade": "^1.10.0",
+    "js-yaml": "^3.3.1"
+  }
+}
